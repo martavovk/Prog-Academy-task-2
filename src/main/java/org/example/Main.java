@@ -1,26 +1,18 @@
 package org.example;
 
-import java.util.Scanner;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class Main {
-    public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
-
-        while (true) {
-
-            System.out.println("What is speed in km per hour?");
-            var speed = scanner.nextDouble();
-
-            if (speed == 0)
-                break;
-
-            System.out.println("How much time do you spent in a ride?");
-            var time = scanner.nextDouble();
-
-            var result = speed*time;
-            System.out.println("Result=" + result);
-        }
-
+    public static void main(String[] args) throws Exception {
+        TelegramBotsApi api=new TelegramBotsApi(DefaultBotSession.class);
+        api.registerBot (new MyBot());
 
     }
 }
+
+
+
+
+//mysuperbot885_bot
+//7057701272:AAGDeEOl7_m6HZ0m8gJzq-Ea97Bb8rIpSPo
